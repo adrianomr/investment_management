@@ -15,7 +15,7 @@ class _HomeState extends State<HomeWidget> {
 
   @override
   void initState() {
-    Future.delayed(Duration(milliseconds: 1), () => homeBloc.fetchData());
+    homeBloc.fetchData();
     super.initState();
   }
 

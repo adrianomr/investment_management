@@ -1,5 +1,5 @@
-import 'package:investment_management/framework/in_memory/user_repository_in_memory.dart';
-import 'package:investment_management/framework/user_repository.dart';
+import 'package:investment_management/framework/repository/in_memory/user_repository_in_memory.dart';
+import 'package:investment_management/framework/repository/user_repository.dart';
 
 import 'user_gateway.dart';
 
