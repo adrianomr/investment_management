@@ -4,7 +4,15 @@ import 'package:investment_management/framework/user_repository.dart';
 import 'user_gateway.dart';
 
 class UserGatewayImpl implements UserGateway {
+  static final UserGatewayImpl _singleton = UserGatewayImpl._internal();
+
   UserRepository userRepository = UserRepositoryInMemory();
+
+  factory UserGatewayImpl() {
+    return _singleton;
+  }
+
+  UserGatewayImpl._internal();
 
   @override
   String find() {
@@ -15,5 +23,4 @@ class UserGatewayImpl implements UserGateway {
   save(String login) {
     userRepository.save(login);
   }
-
 }

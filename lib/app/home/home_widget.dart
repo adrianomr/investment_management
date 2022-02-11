@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:investment_management/app/home/home_module.dart';
 import 'package:investment_management/components/button/submit_widget.dart';
 import 'package:investment_management/components/fields/text_input_widget.dart';
-import 'package:investment_management/util/NavigatorUtil.dart';
 
-import 'login_bloc.dart';
-import 'login_module.dart';
+import 'home_bloc.dart';
+import 'home_module.dart';
 
-class LoginWidget extends StatefulWidget {
+class HomeWidget extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _LoginState();
+  State<StatefulWidget> createState() => _HomeState();
 }
 
-class _LoginState extends State<LoginWidget> {
-  LoginBloc loginBloc = LoginModule.to.getBloc<LoginBloc>();
+class _HomeState extends State<HomeWidget> {
+  HomeBloc homeBloc = HomeModule.to.getBloc<HomeBloc>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +29,7 @@ class _LoginState extends State<LoginWidget> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              TextInputWidget("Login", callback: loginBloc.updateLogin,),
-              SubmitWidget(() => loginBloc.login(context), text: "Login", afterDialogPop: () => NavigatorUtil.open(HomeModule(), context),)
+              Text("Olá")
             ],
           ),
         ),
