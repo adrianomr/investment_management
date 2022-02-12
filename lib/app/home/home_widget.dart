@@ -27,11 +27,7 @@ class _HomeState extends State<HomeWidget> {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Gerente Financeiro"),
-        ),
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: <Widget>[
               SummaryWidget()

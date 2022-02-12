@@ -20,6 +20,11 @@ class PortfolioPresenterImpl extends BlocBase implements PortfolioPresenter {
   @override
   Future<PortfolioDto> findPortfolioSummary() async {
     Portfolio portfolio = await findPortfolioUseCase.execute();
-    return PortfolioDto(patrimony: portfolio.currentAmount);
+    return PortfolioDto(
+      patrimony: portfolio.currentAmount,
+      balance: portfolio.balance,
+      investedAmount: portfolio.investedAmount,
+      percentualBalance: portfolio.balance / portfolio.investedAmount,
+    );
   }
 }
