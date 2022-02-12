@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:investment_management/app/home/home_module.dart';
 import 'package:investment_management/components/button/submit_widget.dart';
 import 'package:investment_management/components/fields/text_input_widget.dart';
-import 'package:investment_management/util/NavigatorUtil.dart';
+import 'package:investment_management/util/navigator_util.dart';
 
 import 'login_bloc.dart';
 import 'login_module.dart';

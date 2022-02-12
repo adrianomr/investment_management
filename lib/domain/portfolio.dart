@@ -1,15 +1,19 @@
 import 'package:investment_management/framework/rest/dto/portfolio_dto.dart';
 
-class Portfolio {
-  int id = 0;
-  double investedAmount = 0;
-  double currentAmount = 0;
-  double balance = 0;
+import 'stock.dart';
 
-  Portfolio(PortfolioDto portfolioDto){
-    id = portfolioDto.id;
-    investedAmount = portfolioDto.investedAmount;
-    currentAmount = portfolioDto.currentAmount;
-    balance = portfolioDto.balance;
-  }
+class Portfolio {
+  int id;
+  double investedAmount;
+  double currentAmount;
+  double balance;
+  List<Stock> stocks;
+
+  Portfolio({
+    required this.id,
+    required this.investedAmount,
+    required this.currentAmount,
+    required this.balance,
+    required this.stocks,
+  });
 }
