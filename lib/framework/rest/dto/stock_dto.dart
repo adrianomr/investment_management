@@ -1,3 +1,6 @@
+import 'package:investment_management/util/double_util.dart';
+import 'package:investment_management/util/int_util.dart';
+
 class StockDto {
   int? id;
   String? ticker;
@@ -8,7 +11,7 @@ class StockDto {
   double? currentAmount;
   double? balance;
   double? grade;
-  int? targetAmount;
+  double? targetAmount;
   double? amountToInvest;
 
   StockDto(
@@ -27,15 +30,15 @@ class StockDto {
   StockDto.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     ticker = json['ticker'];
-    // price = json['price'];
-    // priceAvg = json['priceAvg'];
-    // amount = json['amount'];
-    // investedAmount = json['investedAmount'];
-    // currentAmount = json['currentAmount'];
-    // balance = json['balance'];
-    // grade = json['grade'];
-    // targetAmount = json['targetAmount'];
-    // amountToInvest = json['amountToInvest'];
+    price = DoubleUtil.fromDynamyc(json['price']);
+    priceAvg = DoubleUtil.fromDynamyc(json['priceAvg']);
+    amount = IntUtil.fromDynamyc(json['amount']);
+    investedAmount = DoubleUtil.fromDynamyc(json['investedAmount']);
+    currentAmount = DoubleUtil.fromDynamyc(json['currentAmount']);
+    balance = DoubleUtil.fromDynamyc(json['balance']);
+    grade = DoubleUtil.fromDynamyc(json['grade']);
+    targetAmount = DoubleUtil.fromDynamyc(json['targetAmount']);
+    amountToInvest = DoubleUtil.fromDynamyc(json['amountToInvest']);
   }
 
   Map<String, dynamic> toJson() {

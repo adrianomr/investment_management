@@ -1,5 +1,6 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
-import 'package:investment_management/app/home/dto/portfolio_summary_dto.dart';
+import 'package:investment_management/app/home/dto/portfolio_dto.dart';
+import 'package:investment_management/app/home/dto/stock_dto.dart';
 import 'package:investment_management/domain/portfolio.dart';
 import 'package:investment_management/usecase/find_portfolio.dart';
 import 'package:investment_management/usecase/find_portfolio_impl.dart';
@@ -25,6 +26,7 @@ class PortfolioPresenterImpl extends BlocBase implements PortfolioPresenter {
       balance: portfolio.balance,
       investedAmount: portfolio.investedAmount,
       percentualBalance: portfolio.balance / portfolio.investedAmount,
+      stocks: portfolio.stocks.map((stock) => StockDto.fromStock(stock)).toList(),
     );
   }
 }

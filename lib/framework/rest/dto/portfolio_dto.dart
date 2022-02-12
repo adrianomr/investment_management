@@ -22,7 +22,7 @@ class PortfolioDto {
     investedAmount = reponse.data['investedAmount'];
     currentAmount = reponse.data['currentAmount'];
     balance = reponse.data['balance'];
-    if (reponse.data['stocks'] == null) {
+    if (reponse.data['stocks'] != null) {
       reponse.data['stocks']
           .forEach((stockJson) => stocks.add(StockDto.fromJson(stockJson)));
     }

@@ -37,15 +37,15 @@ class PortfolioGatewayImpl implements PortfolioGateway {
   Stock toStock(StockDto stock) {
     return Stock(
       id: stock.id,
-      investedAmount: stock.investedAmount,
-      currentAmount: stock.currentAmount,
-      balance: stock.balance,
-      amount: stock.amount,
-      amountToInvest: stock.amountToInvest,
-      grade: stock.grade,
-      price: stock.price,
-      priceAvg: stock.priceAvg,
-      targetAmount: stock.targetAmount,
+      investedAmount: stock.investedAmount ?? 0,
+      currentAmount: stock.currentAmount ?? 0,
+      balance: stock.balance ?? 0,
+      amount: stock.amount ?? 0,
+      amountToInvest: stock.amountToInvest ?? 0,
+      grade: stock.grade ?? 0,
+      price: stock.price ?? 0,
+      priceAvg: stock.priceAvg ?? 0,
+      targetAmount: stock.targetAmount ?? 0,
       ticker: stock.ticker,
     );
   }

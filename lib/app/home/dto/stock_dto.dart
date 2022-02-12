@@ -1,4 +1,6 @@
-class Stock {
+import 'package:investment_management/domain/stock.dart';
+
+class StockDto {
   int? id;
   String? ticker;
   double price = 0;
@@ -11,7 +13,7 @@ class Stock {
   double targetAmount = 0;
   double amountToInvest = 0;
 
-  Stock(
+  StockDto(
       {this.id,
       this.ticker,
       required this.price,
@@ -23,4 +25,20 @@ class Stock {
       required this.grade,
       required this.targetAmount,
       required this.amountToInvest});
+
+  static StockDto fromStock(Stock stock) {
+    return StockDto(
+      id: stock.id,
+      ticker: stock.ticker,
+      targetAmount: stock.targetAmount,
+      priceAvg: stock.priceAvg,
+      price: stock.price,
+      grade: stock.grade,
+      amountToInvest: stock.amountToInvest,
+      amount: stock.amount,
+      balance: stock.balance,
+      currentAmount: stock.currentAmount,
+      investedAmount: stock.investedAmount,
+    );
+  }
 }
