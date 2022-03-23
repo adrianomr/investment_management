@@ -20,14 +20,17 @@ class ClientConfig {
 
   buildMocked(){
     routes['stocks-portfolio'] = 'http://192.168.88.253:6543';
+    routes['investment-categories'] = 'http://192.168.88.253:6543';
   }
 
   buildTest(){
     routes['stocks-portfolio'] = 'http://localhost:6543';
+    routes['investment-categories'] = 'http://192.168.88.253:6543';
   }
 
   buildProd(){
     routes['stocks-portfolio'] = 'https://ar-stocks-portfolio.herokuapp.com';
+    routes['investment-categories'] = 'https://investment-categories.herokuapp.com';
   }
 
 }

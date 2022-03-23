@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "id": "e51fbd8e-aa45-11ec-8ea3-e695ef0a379c",
+      "name": "TEST",
+      "grade": 10,
+      "currentAmount": 5,
+      "targetAmount": 10,
+      "category": null,
+      "investments": null
+    }
+  ],
+  "timestamp": "2022-03-23T01:09:33.992994514Z"
+}

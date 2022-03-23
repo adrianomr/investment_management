@@ -1,5 +1,6 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
+import 'package:investment_management/infra/presenter/category_presenter_impl.dart';
 import 'package:investment_management/infra/presenter/portfolio_summary_presenter_impl.dart';
 
 import 'home_bloc.dart';
@@ -11,6 +12,7 @@ class HomeModule extends ModuleWidget {
   List<Bloc<BlocBase>> get blocs => [
         Bloc((i) => HomeBloc()),
         Bloc((i) => PortfolioPresenterImpl()),
+        Bloc((i) => CategoryPresenterImpl()),
       ];
 
   //Inject the dependencies
