@@ -9,7 +9,9 @@ class DioClient implements RestClient {
   Dio dio = Dio();
 
   DioClient(String basePath) {
-    dio = Dio(BaseOptions(baseUrl: basePath+"/"));
+    dio = Dio(BaseOptions(
+      baseUrl: basePath + "/",
+    ));
   }
 
   @override
@@ -18,9 +20,10 @@ class DioClient implements RestClient {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
   }) async {
+    log("[HTTP_REQUEST][SENT] - Path: ${path}");
     ResponseDto response = ResponseDto(await dio.get(path,
         queryParameters: queryParameters, options: Options(headers: headers)));
-    log("[HTTP_REQUEST] - Path: ${path}, Status:${response.status}, Response: ${response.data}");
+    log("[HTTP_REQUEST][RECEIVED] - Path: ${path}, Status:${response.status}, Response: ${response.data}");
     return response;
   }
 }

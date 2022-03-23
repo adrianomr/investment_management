@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:investment_management/app/home/dto/portfolio_dto.dart';
 import 'package:investment_management/app/home/dto/stock_dto.dart';
 import 'package:investment_management/util/colors_util.dart';
 import 'package:investment_management/util/currency_util.dart';

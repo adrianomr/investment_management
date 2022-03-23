@@ -3,21 +3,18 @@ import 'package:investment_management/framework/rest/base/dio_client_impl.dart';
 import 'package:investment_management/framework/rest/dto/response_dto.dart';
 
 abstract class RestClient {
-
   Future<ResponseDto> get(
     String path, {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
   });
 
-  static RestClient buildClient(String basePath){
+  static RestClient buildClient(String pathKey) {
     Environment environment = Environment();
-    if(environment.env == EnviromentEnum.MOCKED){
-      return DioClient(basePath);
+    String? route = environment.clientConfig.routes[pathKey];
+    if(route == null) {
+      throw Error.safeToString("Route not found for key: $pathKey");
     }
-    if(environment.env == EnviromentEnum.TEST){
-      return DioClient(basePath);
-    }
-    return DioClient(basePath);
+    return DioClient(route);
   }
 }
