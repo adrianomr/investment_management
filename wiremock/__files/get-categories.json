@@ -1,14 +1,47 @@
 {
-  "data": [
-    {
-      "id": "e51fbd8e-aa45-11ec-8ea3-e695ef0a379c",
-      "name": "TEST",
-      "grade": 10,
-      "currentAmount": 5,
-      "targetAmount": 10,
-      "category": null,
-      "investments": null
-    }
-  ],
+  "data": {
+    "totalAmount": 29814.89,
+    "investedAmount": 32937.06,
+    "balance": -3122.17,
+    "percentageBalance": -9.48,
+    "categories": [
+      {
+        "id": "e51fbd8e-aa45-11ec-8ea3-e695ef0a379c",
+        "name": "Ações",
+        "grade": 10,
+        "currentAmount": 5,
+        "investedAmount": 5,
+        "targetAmount": 10,
+        "balance": 0,
+        "percentageBalance": 0,
+        "category": null,
+        "investments": null
+      },
+      {
+        "id": "e51fbd8e-aa45-11ec-8ea3-e695ef0a379d",
+        "name": "Fundos Imobiliarios",
+        "grade": 10,
+        "currentAmount": 5,
+        "investedAmount": 5,
+        "targetAmount": 10,
+        "balance": 0,
+        "percentageBalance": 0,
+        "category": null,
+        "investments": null
+      },
+      {
+        "id": "e51fbd8e-aa45-11ec-8ea3-e695ef0a379e",
+        "name": "Ações exterior",
+        "grade": 10,
+        "currentAmount": 5,
+        "investedAmount": 5,
+        "targetAmount": 10,
+        "balance": 0,
+        "percentageBalance": 0,
+        "category": null,
+        "investments": null
+      }
+    ]
+  },
   "timestamp": "2022-03-23T01:09:33.992994514Z"
 }

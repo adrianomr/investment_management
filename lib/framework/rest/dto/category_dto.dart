@@ -1,11 +1,14 @@
 import 'package:investment_management/framework/rest/dto/response_dto.dart';
+import 'package:investment_management/util/double_util.dart';
 
 class CategoryDto {
   String? id;
   String? name;
-  int? grade;
-  int? currentAmount;
-  int? targetAmount;
+  double? grade;
+  double? currentAmount;
+  double? targetAmount;
+  double? balance;
+  double? percentageBalance;
   CategoryDto? category;
   Null? investments;
 
@@ -15,15 +18,19 @@ class CategoryDto {
       this.grade,
       this.currentAmount,
       this.targetAmount,
+      this.balance,
+      this.percentageBalance,
       this.category,
       this.investments});
 
   CategoryDto.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
-    grade = json['grade'];
-    currentAmount = json['currentAmount'];
-    targetAmount = json['targetAmount'];
+    grade = DoubleUtil.fromDynamyc(json['grade']);
+    currentAmount = DoubleUtil.fromDynamyc(json['currentAmount']);
+    targetAmount = DoubleUtil.fromDynamyc(json['targetAmount']);
+    balance = DoubleUtil.fromDynamyc(json['balance']);
+    percentageBalance = DoubleUtil.fromDynamyc(json['percentageBalance']);
     category = json['category'];
     investments = json['investments'];
   }
@@ -35,6 +42,8 @@ class CategoryDto {
     data['grade'] = this.grade;
     data['currentAmount'] = this.currentAmount;
     data['targetAmount'] = this.targetAmount;
+    data['balance'] = this.balance;
+    data['percentageBalance'] = this.percentageBalance;
     data['category'] = this.category;
     data['investments'] = this.investments;
     return data;

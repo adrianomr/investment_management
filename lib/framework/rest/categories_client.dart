@@ -1,5 +1,5 @@
-import 'dto/category_dto.dart';
+import 'dto/investment_categories_dto.dart';
 
 abstract class CategoriesClient {
-  Future<List<CategoryDto>> find();
+  Future<InvestmentCategoriesDto> find();
 }

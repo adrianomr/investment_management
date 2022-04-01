@@ -1,7 +1,5 @@
-import 'package:investment_management/domain/category.dart';
+import 'package:investment_management/domain/investment_categories.dart';
 
-abstract class FindCategoriesUseCase{
-
-  Future<List<Category>> execute();
-
+abstract class FindCategoriesUseCase {
+  Future<InvestmentCategories> execute();
 }

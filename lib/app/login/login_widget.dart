@@ -31,8 +31,15 @@ class _LoginState extends State<LoginWidget> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              TextInputWidget("Login", callback: loginBloc.updateLogin,),
-              SubmitWidget(() => loginBloc.login(context), text: "Login", afterDialogPop: () => NavigatorUtil.open(HomeModule(), context),)
+              TextInputWidget(
+                "Login",
+                callback: loginBloc.updateLogin,
+              ),
+              SubmitWidget(
+                () => loginBloc.login(context),
+                text: "Login",
+                afterDialogPop: () => NavigatorUtil.open(HomeModule(), context),
+              )
             ],
           ),
         ),

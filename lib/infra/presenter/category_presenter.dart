@@ -1,6 +1,6 @@
-import 'package:investment_management/app/home/dto/category_dto.dart';
+import 'package:investment_management/app/investment_categories/dto/investment_categories_dto.dart';
 
 abstract class CategoryPresenter{
-  Future<List<CategoryDto>> findCategories();
+  Future<InvestmentCategoriesDto> findCategories();
 
 }

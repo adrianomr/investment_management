@@ -1,6 +1,6 @@
-import 'package:investment_management/domain/category.dart';
+import 'package:investment_management/domain/investment_categories.dart';
 
 abstract class CategoryGateway {
-  Future<List<Category>> find();
+  Future<InvestmentCategories> find();
 
 }

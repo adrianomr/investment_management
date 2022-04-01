@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:investment_management/app/home/dto/stock_dto.dart';
+import 'package:investment_management/app/investment_categories/dto/category_dto.dart';
 import 'package:investment_management/util/colors_util.dart';
 import 'package:investment_management/util/currency_util.dart';
 import 'package:investment_management/util/percentage_util.dart';
 
-class StocksCardWidget extends StatelessWidget {
-  StockDto stockDto;
+class CategoryCardWidget extends StatelessWidget {
+  CategoryDto categoryDto;
 
-  StocksCardWidget(this.stockDto);
+  CategoryCardWidget(this.categoryDto);
 
   @override
   Widget build(BuildContext context) {
@@ -43,19 +43,7 @@ class StocksCardWidget extends StatelessWidget {
         children: [
           Container(
             child: Text(
-              "${stockDto.ticker}",
-              style: TextStyle(color: ColorsUtil.secondary),
-            ),
-          ),
-          Container(
-            child: Text(
-              "Qtd: ${stockDto.amount}",
-              style: TextStyle(color: ColorsUtil.secondary),
-            ),
-          ),
-          Container(
-            child: Text(
-              "Pos: ${CurrencyUtil.doubleToCurrency(stockDto.currentAmount)}",
+              "${categoryDto.name}",
               style: TextStyle(color: ColorsUtil.secondary),
             ),
           ),
@@ -71,19 +59,19 @@ class StocksCardWidget extends StatelessWidget {
         children: [
           Container(
             child: Text(
-              "Saldo",
+              "Valor Atual",
               style: TextStyle(color: ColorsUtil.secondary),
             ),
           ),
           Container(
             child: Text(
-              CurrencyUtil.doubleToCurrency(stockDto.balance),
+              CurrencyUtil.doubleToCurrency(categoryDto.currentAmount),
               style: TextStyle(color: ColorsUtil.secondary),
             ),
           ),
           Container(
             child: Text(
-              PercentageUtil.doubleToPercentage(stockDto.balance/stockDto.investedAmount),
+              PercentageUtil.doubleToPercentage(categoryDto.percentageBalance),
               style: TextStyle(color: ColorsUtil.secondary),
             ),
           ),

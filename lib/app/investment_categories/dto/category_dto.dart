@@ -1,9 +1,11 @@
 class CategoryDto {
   String id;
   String name;
-  int grade;
-  int currentAmount;
-  int targetAmount;
+  double grade;
+  double currentAmount;
+  double targetAmount;
+  double balance;
+  double percentageBalance;
   CategoryDto? category;
   Null investments;
 
@@ -13,12 +15,10 @@ class CategoryDto {
     required this.grade,
     required this.currentAmount,
     required this.targetAmount,
+    required this.balance,
+    required this.percentageBalance,
     required this.category,
     this.investments,
   });
 
-  @override
-  String toString() {
-    return 'CategoryDto{id: $id, name: $name, grade: $grade, currentAmount: $currentAmount, targetAmount: $targetAmount, category: $category, investments: $investments}';
-  }
 }

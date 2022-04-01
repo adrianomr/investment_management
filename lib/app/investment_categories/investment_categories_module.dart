@@ -1,0 +1,28 @@
+import 'package:bloc_pattern/bloc_pattern.dart';
+import 'package:flutter/material.dart';
+import 'package:investment_management/infra/presenter/category_presenter_impl.dart';
+import 'package:investment_management/infra/presenter/portfolio_summary_presenter_impl.dart';
+
+import 'investment_categories_bloc.dart';
+import 'investment_categories_widget.dart';
+
+class InvestmentCategoriesModule extends ModuleWidget {
+  //Inject the blocs
+  @override
+  List<Bloc<BlocBase>> get blocs => [
+        Bloc((i) => InvestmentCategoriesBloc()),
+        Bloc((i) => PortfolioPresenterImpl()),
+        Bloc((i) => CategoryPresenterImpl()),
+      ];
+
+  //Inject the dependencies
+  @override
+  List<Dependency> get dependencies => [];
+
+  //main widget
+  @override
+  Widget get view => InvestmentCategoriesWidget();
+
+  //shortcut to pick up dependency injections from this module
+  static Inject get to => Inject<InvestmentCategoriesModule>.of();
+}

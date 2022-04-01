@@ -1,4 +1,4 @@
-import 'package:investment_management/app/home/dto/stock_dto.dart';
+import 'package:investment_management/app/stocks_portfolio/dto/stock_dto.dart';
 
 class PortfolioDto {
   double patrimony;

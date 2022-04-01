@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:investment_management/app/home/dto/portfolio_dto.dart';
+import 'package:investment_management/app/investment_categories/dto/investment_categories_dto.dart';
 import 'package:investment_management/util/colors_util.dart';
 import 'package:investment_management/util/currency_util.dart';
 import 'package:investment_management/util/percentage_util.dart';
 
 class SummaryWidget extends StatelessWidget {
-  PortfolioDto portfolioDto;
+  InvestmentCategoriesDto investmentCategoriesDto;
 
-  SummaryWidget(this.portfolioDto);
+  SummaryWidget(this.investmentCategoriesDto);
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +15,16 @@ class SummaryWidget extends StatelessWidget {
       color: ColorsUtil.primary,
       child: Column(
         children: [
-          buildPatrimony(portfolioDto),
+          buildPatrimony(investmentCategoriesDto),
           Padding(padding: EdgeInsets.only(bottom: 15)),
-          buildTotals(portfolioDto),
+          buildTotals(investmentCategoriesDto),
           Padding(padding: EdgeInsets.only(bottom: 15)),
         ],
       ),
     );
   }
 
-  Widget buildPatrimony(PortfolioDto portfolioDto) {
+  Widget buildPatrimony(InvestmentCategoriesDto investmentCategoriesDto) {
     return Column(
       children: [
         Container(
@@ -37,7 +37,7 @@ class SummaryWidget extends StatelessWidget {
         Container(
           padding: EdgeInsets.only(top: 10),
           child: Text(
-            CurrencyUtil.doubleToCurrency(portfolioDto.patrimony),
+            CurrencyUtil.doubleToCurrency(investmentCategoriesDto.totalAmount),
             style: TextStyle(
               color: ColorsUtil.secondary,
               fontSize: 20,
@@ -47,7 +47,7 @@ class SummaryWidget extends StatelessWidget {
         Container(
           padding: EdgeInsets.only(top: 10),
           child: Text(
-            "( ${PercentageUtil.doubleToPercentage(portfolioDto.percentualBalance)} )",
+            "( ${PercentageUtil.doubleToPercentage(investmentCategoriesDto.percentageBalance)} )",
             style: TextStyle(color: ColorsUtil.secondary, fontSize: 17),
           ),
         ),
@@ -65,31 +65,32 @@ class SummaryWidget extends StatelessWidget {
     );
   }
 
-  Widget buildTotals(PortfolioDto portfolioDto) {
+  Widget buildTotals(InvestmentCategoriesDto investmentCategoriesDto) {
     return Row(
       children: [
-        Expanded(child: buildAmountInvested(portfolioDto)),
-        Expanded(child: buildBalance(portfolioDto)),
+        Expanded(child: buildAmountInvested(investmentCategoriesDto)),
+        Expanded(child: buildBalance(investmentCategoriesDto)),
       ],
     );
   }
 
-  Widget buildAmountInvested(PortfolioDto portfolioDto) {
+  Widget buildAmountInvested(InvestmentCategoriesDto investmentCategoriesDto) {
     return Column(
       children: [
         buildContainer("Investido"),
         buildContainer(
-          CurrencyUtil.doubleToCurrency(portfolioDto.investedAmount),
+          CurrencyUtil.doubleToCurrency(investmentCategoriesDto.investedAmount),
         )
       ],
     );
   }
 
-  Widget buildBalance(PortfolioDto portfolioDto) {
+  Widget buildBalance(InvestmentCategoriesDto investmentCategoriesDto) {
     return Column(
       children: [
         buildContainer("Saldo"),
-        buildContainer(CurrencyUtil.doubleToCurrency(portfolioDto.balance)),
+        buildContainer(
+            CurrencyUtil.doubleToCurrency(investmentCategoriesDto.balance)),
       ],
     );
   }

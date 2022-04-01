@@ -1,6 +1,6 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
-import 'package:investment_management/app/home/dto/portfolio_dto.dart';
-import 'package:investment_management/app/home/dto/stock_dto.dart';
+import 'package:investment_management/app/stocks_portfolio/dto/portfolio_dto.dart';
+import 'package:investment_management/app/stocks_portfolio/dto/stock_dto.dart';
 import 'package:investment_management/domain/portfolio.dart';
 import 'package:investment_management/usecase/find_portfolio.dart';
 import 'package:investment_management/usecase/find_portfolio_impl.dart';

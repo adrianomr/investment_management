@@ -3,9 +3,11 @@
 class Category {
   String id;
   String name;
-  int grade;
-  int currentAmount;
-  int targetAmount;
+  double grade;
+  double currentAmount;
+  double targetAmount;
+  double balance;
+  double percentageBalance;
   Category? category;
   Null investments;
 
@@ -15,6 +17,8 @@ class Category {
     required this.grade,
     required this.currentAmount,
     required this.targetAmount,
+    required this.balance,
+    required this.percentageBalance,
     required this.category,
     this.investments,
   });
